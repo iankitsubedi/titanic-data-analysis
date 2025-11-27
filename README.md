@@ -24,19 +24,14 @@ The dataset (`tested.csv`) contains the following columns:
 ## Visualizations
 
 1. **Histogram of Age** – Shows the distribution of passenger ages on board.  
-
 2. **Scatter Plot: Age vs Siblings/Spouses (`SibSp`)** – Shows relationship between passenger age and number of siblings/spouses.  
-
 3. **Bar Chart: Survival by Gender** – Shows the count of survivors and non-survivors for male and female passengers.  
-
 4. **Bar Chart: Number of Siblings/Spouses** – Shows distribution of passengers based on the number of siblings/spouses aboard.  
-
 5. **Pie Chart: Survival Rate** – Shows overall survival vs non-survival percentage.  
-
 6. **Pie Chart: Gender Distribution** – Shows proportion of male and female passengers.  
 
-## How to Run
+## Installation
 
 1. Clone this repository:  
 ```bash
-git clone https://github.com/your-username/titanic-visualization.git
+git clone https://github.com/iankitsubedi/titanic-visualization.git
