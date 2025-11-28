@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 df = pd.read_csv("tested.csv")
 
@@ -13,11 +14,11 @@ df["Sex"] = df["Sex"].replace({"male": "Male",
 df =df.drop_duplicates()
 
 # Histogram
-plt.hist(df['Age'] ,color="#4ecdc4",edgecolor = "black")
+sns.histplot(data = df , x = "Age" , hue="Sex")
 plt.xlabel("Age")
 plt.ylabel("No of people")
 plt.title("Histogram between Age and No of people")
-plt.show()
+plt.show()  
 
 # Scatter plot
 plt.scatter(df['Age'], df['SibSp'] + np.random.normal(0, 0.05, len(df)), 
@@ -27,6 +28,12 @@ plt.ylabel("No of Siblings/Spouses")
 plt.title("Scatterplot of Age and No of Siblings/Spouses")
 plt.yticks(range(df['SibSp'].max() + 1))
 plt.grid(alpha=0.3)
+plt.show()
+
+# More Scatter plot
+df['Survived'] = df['Survived'].astype(bool)
+sns.scatterplot(data=df , x = 'Age' , y = 'SibSp' , hue="Survived" , alpha = 0.5)
+plt.title("Relation")
 plt.show()
 
 # Bar chart: Survival by Gender
@@ -60,4 +67,10 @@ sex_counts = df['Sex'].value_counts()
 plt.pie(sex_counts, labels=sex_counts.index, 
         autopct='%1.1f%%', startangle=90, colors=['#95e1d3', '#f38181'])
 plt.title("Gender Distribution")
+plt.show()
+
+#line plot
+sns.set_style("whitegrid")
+sns.lineplot(data= df , x = 'Age' , y = 'SibSp' , color = "blue")
+plt.title("Line plot betwen Age and No of siblings")
 plt.show()
